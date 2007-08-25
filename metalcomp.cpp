@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <cmath>
 #include "mainwindow.h"
 #include "metalcomp.h"
 
@@ -33,4 +34,31 @@ double computeThermalElement(TE_Type type, double voltage, double clampTemperatu
 	}
 	
 	return (result < 2000) ? result : 2000;
+}
+
+double computeLambdaProbe(double temperature, double voltage, double CO, double K1, double K2)
+{
+	const double const1 = 0.043082;
+	const double const2 = 9.19884;
+	const double const3 = 0.434294;
+	
+	double var1,var2,var3;
+	double result = 1.0f;
+	
+	var1 = (K1 - voltage) / (temperature * const1) + const2 - log(CO);
+	var2 = K2 / const3;
+	
+	var3 = 1.0;
+	
+	for(int i=0;i<12;i++)
+	{
+		var3 /= 2.0;
+				
+		if((var2 * result - log(result)) < var1)
+			result -= var3;
+		else
+			result += var3;
+	}
+	
+	return result;
 }

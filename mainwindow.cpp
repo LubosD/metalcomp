@@ -8,8 +8,10 @@ MainWindow::MainWindow()
 	
 	connect(pushAbout, SIGNAL(clicked()), this, SLOT(about()));
 	connect(pushThermalElementCompute, SIGNAL(clicked()), this, SLOT(computeThermalElement()));
+	connect(pushLambdaProbeCompute, SIGNAL(clicked()), this, SLOT(computeLambdaProbe()));
 	
 	computeThermalElement();
+	computeLambdaProbe();
 }
 
 void MainWindow::about()
@@ -43,6 +45,20 @@ void MainWindow::computeThermalElement()
 	
 	result = ::computeThermalElement(type, voltage, clampTemperature);
 	
-	lineThermalElementResult->setText(QString::number(result));
+	lineThermalElementResult->setText(QString::fromUtf8("%1 °C").arg(result));
 }
 
+void MainWindow::computeLambdaProbe()
+{
+	double temperature, voltage, co, k1, k2, result;
+	
+	temperature = doubleTemperature->value();
+	voltage = doubleProbeVoltage->value();
+	co = doubleCOVolume->value();
+	k1 = doubleK1->value();
+	k2 = doubleK2->value();
+	
+	result = ::computeLambdaProbe(temperature, voltage, co, k1, k2);
+	
+	lineLambdaProbeResult->setText(QString("%1 %").arg(result));
+}

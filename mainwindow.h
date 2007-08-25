@@ -11,6 +11,7 @@ public:
 private slots:
 	void about();
 	void computeThermalElement();
+	void computeLambdaProbe();
 };
 
 #endif
