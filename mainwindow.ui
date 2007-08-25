@@ -1,0 +1,348 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>577</width>
+    <height>484</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MetalComp</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QGridLayout" >
+    <item row="0" column="0" colspan="2" >
+     <widget class="QTabWidget" name="tabWidget" >
+      <widget class="QWidget" name="tab" >
+       <attribute name="title" >
+        <string>Thermal element</string>
+       </attribute>
+       <layout class="QGridLayout" >
+        <item row="0" column="0" colspan="2" >
+         <widget class="QGroupBox" name="groupBox" >
+          <property name="title" >
+           <string>Element type</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QRadioButton" name="radioTE_Type1" >
+             <property name="text" >
+              <string>Pt-Rh10 (S)</string>
+             </property>
+             <property name="checked" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" >
+            <widget class="QRadioButton" name="radioTE_Type2" >
+             <property name="text" >
+              <string>Pt-Rh13 (R)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" >
+            <widget class="QRadioButton" name="radioTE_Type3" >
+             <property name="text" >
+              <string>Ni-CrNi (K)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" >
+            <widget class="QRadioButton" name="radioTE_Type4" >
+             <property name="text" >
+              <string>Ni-CrSi (N)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" >
+            <widget class="QRadioButton" name="radioTE_Type5" >
+             <property name="text" >
+              <string>Fe-Co (J)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="3" >
+         <widget class="QGroupBox" name="groupBox_2" >
+          <property name="title" >
+           <string>Input data</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QLabel" name="label" >
+             <property name="text" >
+              <string>Thermal voltage:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" >
+            <widget class="QDoubleSpinBox" name="doubleThermalVoltage" >
+             <property name="maximum" >
+              <double>50.000000000000000</double>
+             </property>
+             <property name="singleStep" >
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value" >
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" >
+            <widget class="QLabel" name="label_2" >
+             <property name="text" >
+              <string>mV</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" >
+            <widget class="QLabel" name="label_3" >
+             <property name="text" >
+              <string>Clamp temperature:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" >
+            <widget class="QDoubleSpinBox" name="doubleClampTemperature" >
+             <property name="maximum" >
+              <double>50.000000000000000</double>
+             </property>
+             <property name="singleStep" >
+              <double>1.100000000000000</double>
+             </property>
+             <property name="value" >
+              <double>20.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2" >
+            <widget class="QLabel" name="label_4" >
+             <property name="text" >
+              <string>°C</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2" >
+         <widget class="QLineEdit" name="lineThermalElementResult" >
+          <property name="readOnly" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3" >
+         <widget class="QLabel" name="label_6" >
+          <property name="text" >
+           <string>°C</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>181</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="4" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QPushButton" name="pushThermalElementCompute" >
+          <property name="text" >
+           <string>Resulting temperature</string>
+          </property>
+          <property name="autoDefault" >
+           <bool>true</bool>
+          </property>
+          <property name="default" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2" >
+       <attribute name="title" >
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0" >
+     <spacer>
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" >
+       <size>
+        <width>391</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1" >
+     <widget class="QPushButton" name="pushAbout" >
+      <property name="text" >
+       <string>About MetalComp</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>doubleThermalVoltage</sender>
+   <signal>editingFinished()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>381</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>62</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleClampTemperature</sender>
+   <signal>editingFinished()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>animateClick()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>386</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>126</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioTE_Type1</sender>
+   <signal>clicked()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>69</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>39</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioTE_Type2</sender>
+   <signal>clicked()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>91</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>47</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioTE_Type3</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>106</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>102</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioTE_Type4</sender>
+   <signal>clicked()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>94</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioTE_Type5</sender>
+   <signal>clicked()</signal>
+   <receiver>pushThermalElementCompute</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>133</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>126</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
